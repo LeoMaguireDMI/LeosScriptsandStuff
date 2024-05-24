@@ -37,4 +37,4 @@ $MailBoxPermissions
 $MailBoxPermissionsAfter
 
 # Disconnect the session
-Disconnect-ExchangeOnline
+Disconnect-ExchangeOnli
