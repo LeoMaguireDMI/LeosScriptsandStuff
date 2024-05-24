@@ -1,6 +1,17 @@
 # Force PowerShell to use TLS 1.2
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
+# Check if the ExchangeOnlineManagement module is installed
+if (-not (Get-Module -ListAvailable -Name ExchangeOnlineManagement)) {
+    # Install the PowerShellGet module
+    Install-Module -Name PowerShellGet -Force -AllowClobber
+    # Install the ExchangeOnlineManagement module
+    Install-Module -Name ExchangeOnlineManagement
+}
+
+# Import the ExchangeOnlineManagement module
+Import-Module ExchangeOnlineManagement
+
 # Define the user whose mailbox permissions you want to check
 $UserMailbox = Read-Host -Prompt "Enter the username of the mailbox you want to check"
 
