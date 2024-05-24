@@ -18,8 +18,8 @@ function Connect-Exchange {
 }
 
 function Disconnect-Exchange {
-    # Disconnect the session
-    Disconnect-ExchangeOnline
+    # Disconnect the session without confirmation
+    Disconnect-ExchangeOnline -Confirm:$false
 }
 
 Export-ModuleMember -Function Connect-Exchange, Disconnect-Exchange
