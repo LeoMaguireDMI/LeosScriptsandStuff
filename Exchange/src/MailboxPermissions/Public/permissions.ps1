@@ -7,5 +7,3 @@ function Get-MailboxPermissions {
     # Get the Mailbox permissions for the specified user
     Get-ExoMailboxPermission -Identity $UserMailbox
 }
-
-Export-ModuleMember -Function Get-MailboxPermissions

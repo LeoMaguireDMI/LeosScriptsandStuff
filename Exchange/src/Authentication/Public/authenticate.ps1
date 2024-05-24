@@ -21,5 +21,3 @@ function Disconnect-Exchange {
     # Disconnect the session without confirmation
     Disconnect-ExchangeOnline -Confirm:$false
 }
-
-Export-ModuleMember -Function Connect-Exchange, Disconnect-Exchange
