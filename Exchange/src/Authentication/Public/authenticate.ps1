@@ -1,5 +1,7 @@
 # Force PowerShell to use TLS 1.2
+#[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::SystemDefault
 
 function Connect-Exchange {
     # Check if the ExchangeOnlineManagement module is installed
@@ -21,5 +23,3 @@ function Disconnect-Exchange {
     # Disconnect the session without confirmation
     Disconnect-ExchangeOnline -Confirm:$false
 }
-
-Export-ModuleMember -Function Connect-Exchange, Disconnect-Exchange
